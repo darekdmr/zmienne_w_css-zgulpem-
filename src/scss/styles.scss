@@ -1,1 +1,59 @@
 // styles.scss
+@import "settings";
+
+:root {
+    --light: $neon-opacity;
+    --glow: $neon-glow;
+}
+
+html {
+    font-size: $html-font_size;
+    font-family: "Monda", sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    // background-image: url('../img/apple.jpg');
+    background-size: cover;
+    background-position: bottom center;
+
+.night {
+    height: 100vh;
+    background-color: black;
+    opacity: calc(1 - var(--light)); /* zmienna 0-przeroczystość całkowita, 1-nieprzezroczyste*/
+    // z-index: 0;    
+}
+
+.neon {
+    font-size: $neon-font_size;
+    color: $neon-color;
+    position: absolute;
+    left: 5%;
+    bottom: 3%;
+    letter-spacing: .2rem;
+    text-shadow: rgba(255, 0255, 0255, 0.8) 0 0 calc(5 * var(--glow)), $neon-color 0 0 var(--glow);
+    // opacity: var(--light);
+    opacity: calc(0 + var(--light));
+    // z-index: 1;
+}
+
+.fa {
+    font-size: $fa-font_size;
+}
+input {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    left: 30px;
+    top: 10px;
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: $html-font_size * 2;
+    }
+}
+
+}
